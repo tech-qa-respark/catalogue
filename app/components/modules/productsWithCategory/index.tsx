@@ -4,8 +4,8 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 function ProductsWithCategory({ categories }) {
-    const { keywords } = useSelector(state => state.store ? state.store.storeData : null);
-    const { configData } = useSelector(state => state.store ? state.store.storeData : null);
+    const { keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
+    const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null);
 
     return (
         <div className="products-category-wrap">

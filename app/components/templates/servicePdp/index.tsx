@@ -12,8 +12,8 @@ function ServicePdp({ item, activeGroup }) {
   const [showLongDescription, setShowLongDescription] = useState(false);
   const shortDescription = item.description ? item.description?.substring(0, 110) : '';
   const alreadyShortDescription = item.description <= item?.description?.substring(0, 110);
-  const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-  const { configData } = useSelector(state => state.store ? state.store.storeData : null);
+  const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+  const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null);
 
   let catName: any = ('pagepath' in router.query) ? router.query.pagepath[0].split("-") : '';
   catName.pop();

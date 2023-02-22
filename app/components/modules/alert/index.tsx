@@ -12,7 +12,7 @@ function TransitionRightToLeft(props: TransitionProps) {
 
 function AlertNotification() {
 
-    const alert = useSelector(state => state.alert);
+    const alert = useSelector((state: any) => state.alert);
     const [displayAlert, setDisplayAlert] = useState(false);
     const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {
         if (reason === 'clickaway') {

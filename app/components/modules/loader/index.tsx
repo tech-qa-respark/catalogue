@@ -2,7 +2,7 @@ import React from 'react'
 import { useSelector } from 'react-redux';
 
 function Loader() {
-    const loading = useSelector(state => state.loader);
+    const loading = useSelector((state: any) => state.loader);
     return (
         <>
             {loading ? <div className="loaderbody">

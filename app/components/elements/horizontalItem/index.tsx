@@ -15,13 +15,13 @@ function MdNavigateNext(props) {
 }
 
 function Item({ item, config, type = '' }) {
-    const { configData, keywords } = useSelector(state => state.store ? state.store.storeData : null);
+    const { configData, keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
     const dispatch = useDispatch();
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-    const storeMetaData = useSelector(state => state.store ? state.store.storeMetaData : null);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+    const storeMetaData = useSelector((state: any) => state.store ? state.store.storeMetaData : null);
     const [selectedVariationService, setSelectedVariationService] = useState<any>('');
     const [selectedVariation, setSelectedVariation] = useState<any>('');
-    const appointmentItems = useSelector(state => state.appointmentServices);
+    const appointmentItems = useSelector((state: any) => state.appointmentServices);
     const [isAlreadyAdded, setIsAlreadyAdded] = useState(false);
     const [isAlreadyAddedVariation, setIsAlreadyAddedVariation] = useState(false);
     const [showVariationSelectionModal, setShowVariationSelectionModal] = useState(false)

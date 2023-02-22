@@ -11,9 +11,9 @@ import { navigateTo } from '@util/routerService';
 
 function HorizontalSquareGrid({ items, config }) {
     const dispatch = useDispatch();
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
     const [activeModalConfig, setactiveModalConfig] = useState<any>({ active: false, itemList: [], config: {}, noImage: SKILLED_STAFF_NO_IMAGE });
-    const itemsList = useSelector(state => state.store.storeData.itemsList);
+    const itemsList = useSelector((state: any) => state.store.storeData.itemsList);
 
     const onItemClick = (item: any) => {
 

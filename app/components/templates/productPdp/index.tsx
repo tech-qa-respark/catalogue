@@ -18,9 +18,9 @@ function ProductPdp({ item, activeGroup }) {
   const [quantity, setQuantity] = useState(0);
   const [total, setTotal] = useState(0);
   const dispatch = useDispatch();
-  const cartItems = useSelector(state => state.order.items);
+  const cartItems = useSelector((state: any) => state.order.items);
   const categoryName = ('pagepath' in router.query) ? router.query.pagepath[0].split("-").join(" ") : '';
-  const { configData } = useSelector(state => state.store ? state.store.storeData : null);
+  const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null);
 
   useEffect(() => {
     if (windowRef) {

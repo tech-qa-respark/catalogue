@@ -20,9 +20,9 @@ type Props = {
 
 const Default = ({ children, enableDefaultLayout, currentPage }: Props) => {
   const router = useRouter();
-  const state = useSelector(state => state);
+  const state = useSelector((state: any) => state);
   const [showFooter, setShowFooter] = useState(false);
-  const { configData } = useSelector(state => state.store ? state.store.storeData : null);
+  const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null);
 
   useEffect(() => {
     if (router) {

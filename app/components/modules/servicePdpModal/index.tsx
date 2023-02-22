@@ -62,23 +62,23 @@ const shareIconList = [
 function ServicePdpModal() {
     const router = useRouter();
     const dispatch = useDispatch();
-    const cartItems = useSelector(state => state.orderItems);
-    const appointmentItems = useSelector(state => state.appointmentServices);
-    const item = useSelector(state => state.pdpItem);
-    const pdpItemStatus = useSelector(state => state.pdpItemStatus);
+    const cartItems = useSelector((state: any) => state.orderItems);
+    const appointmentItems = useSelector((state: any) => state.appointmentServices);
+    const item = useSelector((state: any) => state.pdpItem);
+    const pdpItemStatus = useSelector((state: any) => state.pdpItemStatus);
     const [showLongDescription, setShowLongDescription] = useState(false);
     const shortDescription = item?.description ? item?.description?.substring(0, 110) : '';
     const alreadyShortDescription = item?.description <= item?.description?.substring(0, 110);
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
     const [isAlreadyAdded, setIsAlreadyAdded] = useState(false);
-    const { configData, keywords } = useSelector(state => state.store ? state.store.storeData : null);
+    const { configData, keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
     const [availableWidth, setAvailableWidth] = useState(400);
     const [selectedVariationService, setSelectedVariationService] = useState<any>('');
     const [selectedVariation, setSelectedVariation] = useState<any>('');
-    const storeMetaData = useSelector(state => state.store ? state.store.storeMetaData : null);
+    const storeMetaData = useSelector((state: any) => state.store ? state.store.storeMetaData : null);
     const [descList, setDescList] = useState(item?.description ? item?.description?.split('||') : []);
     const [openShareModal, setOpenShareModal] = useState(false);
-    const currentPage = useSelector(state => state.currentPage);
+    const currentPage = useSelector((state: any) => state.currentPage);
 
     if (item && !item?.categoryName) {
         let catName: any = ('pagepath' in router.query) ? router?.query?.pagepath[0].split("-") : '';

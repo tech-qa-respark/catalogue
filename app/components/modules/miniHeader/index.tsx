@@ -6,8 +6,8 @@ import { useSelector } from 'react-redux';
 import { navigateTo } from "@util/routerService";
 
 function MiniHeader({ currentPage }) {
-  const currentPageStatus = useSelector(state => state.currentPage);
-  const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+  const currentPageStatus = useSelector((state: any) => state.currentPage);
+  const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
 
   const onBackClick = () => {
     if (currentPageStatus == 'orderconfirmation' || currentPageStatus == "invoice") navigateTo('home')

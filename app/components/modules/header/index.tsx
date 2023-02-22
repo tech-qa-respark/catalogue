@@ -106,17 +106,17 @@ function MainHeader({ storeData, storeMetaData }) {
   const classes = useStyles();
   const [openDrawer, setOpenDrawer] = useState(false);
   const dispatch = useDispatch();
-  const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-  const pdpItem = useSelector(state => state.pdpItem);
+  const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+  const pdpItem = useSelector((state: any) => state.pdpItem);
   const router = useRouter();
-  const { configData } = useSelector(state => state.store ? state.store.storeData : null);
+  const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null);
   const [showUserRegModalOnFirstLoad, setShowUserRegModalOnFirstLoad] = useState(configData?.storeConfig?.sparkConfig?.userConfig?.userRegPopupReq);
   const [openUserRegistrationModalOnBtnClick, setOpenUserRegistrationModalOnBtnClick] = useState(true);
   const [userData, setUserData] = useState(cookie['user']);
   const [showlogoutPopup, setShowLogoutPopup] = useState(false);
-  const cartItems = useSelector(state => state.orderItems);
+  const cartItems = useSelector((state: any) => state.orderItems);
   const [cartItemQuantity, setCartItemQuantity] = useState(0);
-  const genericImages = useSelector(state => state.genericImages);
+  const genericImages = useSelector((state: any) => state.genericImages);
   const [currentPageName, setCurrentPageName] = useState('');
   const [showPrompt, setShowPrompt] = useState(false);
   const [installAppModal, setInstallAppModal] = useState<any>({ isInstalled: true, promptEvent: null })

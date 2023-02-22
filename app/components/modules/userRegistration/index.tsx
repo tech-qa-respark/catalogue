@@ -44,13 +44,13 @@ function UserRegistrationModal({ fromPage = '', handleResponse, isApppGrpChangeO
     const dispatch = useDispatch();
     const [cookie, setCookie] = useCookies();
     const [error, setError] = useState({ id: '', text: '' });
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-    const storeData = useSelector(state => state.store ? state.store.storeData : null);
-    const activeGroup = useSelector(state => state.activeGroup);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+    const storeData = useSelector((state: any) => state.store ? state.store.storeData : null);
+    const activeGroup = useSelector((state: any) => state.activeGroup);
     const [userFromCookies, setUserCookie] = useState(cookie['user']);
     const [showRegistrationScreen, setShowRegistrationScreen] = useState(false);
     const [showWellcomeScreen, setShowWellcomeScreen] = useState(false);
-    const { configData } = useSelector(state => state.store ? state.store.storeData : null);
+    const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null);
     const userConfig = configData?.storeConfig?.sparkConfig?.userConfig;
     const [showSignInPage, setShowSignInPage] = useState(fromPage != 'PROFILE' ? true : false)
     const [pageheight, setpageheight] = useState<any>('370px');

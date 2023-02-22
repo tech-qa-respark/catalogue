@@ -10,7 +10,7 @@ function SearchPage() {
     const [filteredList, setFilteredList] = useState({ filteredServices: [], filteredProducts: [] });
     const [itemToSearch, setitemToSearch] = useState('')
     const itemSearchRef = useRef<HTMLInputElement>(null);
-    const storeData = useSelector(state => state.store ? state.store.storeData : null);
+    const storeData = useSelector((state: any) => state.store ? state.store.storeData : null);
     const keywords = storeData.keywords;
     const dispatch = useDispatch();
 

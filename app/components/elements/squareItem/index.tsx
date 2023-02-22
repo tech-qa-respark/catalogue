@@ -9,9 +9,9 @@ import { windowRef } from '@util/window';
 
 function squareItem({ item, config, handleClick }) {
     const router = useRouter()
-    const { keywords } = useSelector(state => state.store ? state.store.storeData : null);
+    const { keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
     if (item && item.name) {
-        const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+        const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
         let itemUrl = item.name.toLowerCase().split(" ").join("-");
         const endUrlSegment = (config.type == keywords[SERVICE]) ? 'srp' : (config.type == keywords[PRODUCT] ? 'prp' : '');
         itemUrl = config.type ? `${itemUrl}-${endUrlSegment}` : itemUrl;

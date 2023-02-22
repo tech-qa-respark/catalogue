@@ -21,7 +21,7 @@ const StoreLocator = ({ storeData }) => {
 
     const [storesList, setStoresList] = useState([])
     const dispatch = useDispatch();
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
 
     useEffect(() => {
         if (storeData.tenantId) {

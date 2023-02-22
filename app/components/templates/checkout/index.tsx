@@ -67,12 +67,12 @@ function GrFormLocation(props) {
 function CheckoutPage() {
     const [pricingBreakdown, setpricingBreakdown] = useState({ total: 0, subTotal: 0, appliedTaxes: [] });
     const dispatch = useDispatch();
-    const cartItems = useSelector(state => state.orderItems);
-    const storeData = useSelector(state => state.store.storeData);
-    const { configData, keywords } = useSelector(state => state.store ? state.store.storeData : null);
+    const cartItems = useSelector((state: any) => state.orderItems);
+    const storeData = useSelector((state: any) => state.store.storeData);
+    const { configData, keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
     const { gupshupConfig } = configData?.storeConfig;
-    const store = useSelector(state => state.store);
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+    const store = useSelector((state: any) => state.store);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
     const [cookie, setCookie] = useCookies();
     const [userData, setUserCookie] = useState(cookie['user']);
     const [activeGroup, setActiveGroup] = useState(cookie['grp']);
@@ -87,7 +87,7 @@ function CheckoutPage() {
     const [showOrderingOff, setShowOrderingOff] = useState(false);
     const [openUserUpdationModal, setOpenUserUpdationModal] = useState(false);
     const [showTotalBreakdownPopup, setShowTotalBreakdownPopup] = useState(false);
-    const storeMetaData = useSelector(state => state.store ? state.store.storeMetaData : null);
+    const storeMetaData = useSelector((state: any) => state.store ? state.store.storeMetaData : null);
     const whatsappTemplates = store.whatsappTemplates;
 
     const [userAddresses, setUserAddresses] = useState([

@@ -11,14 +11,14 @@ import { navigateTo } from '@util/routerService';
 function OrderConfirmation() {
     const [cookie, setCookie] = useCookies();
     const [userData, setUserCookie] = useState(cookie['user']);
-    const store = useSelector(state => state.store);
-    const activeGroup = useSelector(state => state.activeGroup);
+    const store = useSelector((state: any) => state.store);
+    const activeGroup = useSelector((state: any) => state.activeGroup);
     const dispatch = useDispatch();
     const router = useRouter()
     const [orderSuccess, setOrderSuccess] = useState(false);
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
     const [orderData, setOrderData] = useState(null);
-    const { configData } = useSelector(state => state.store ? state.store.storeData : null)
+    const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null)
 
     useEffect(() => {
         if (router.query.pagepath.includes("orderconfirmation")) {

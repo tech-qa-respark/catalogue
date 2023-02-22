@@ -37,7 +37,7 @@ function ProfilePage() {
     const [openAddressModal, setOpenAddressModal] = useState(false);
     const [selectedAddressToEdit, setSelectedAddressToEdit] = useState(null);
     const storeData: any = useSelector((state: any) => state.store.storeData);
-    const { configData } = useSelector(state => state.store ? state.store.storeData : null);
+    const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null);
     const [userAddresses, setUserAddresses] = useState([
         { type: 'Home', value: null, isNew: false, isEdited: false, icon: <AiOutlineHome /> },
         { type: 'Work', value: null, isNew: false, isEdited: false, icon: <CgWorkAlt /> },

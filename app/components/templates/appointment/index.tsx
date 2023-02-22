@@ -43,14 +43,14 @@ const DatePickerInput = forwardRef((props: any, ref: any) => <button className="
 function Appointment() {
     const [cookie, setCookie] = useCookies();
     const [userData, setUserCookie] = useState(cookie['user']);
-    const store = useSelector(state => state);
+    const store = useSelector((state: any) => state);
     const dispatch = useDispatch();
     const [itemToSearch, setitemToSearch] = useState('');
     const [expertQuery, setExpertQuery] = useState('');
     const [memberQuery, setmemberQuery] = useState('');
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-    const appointmentItems = useSelector(state => state.appointmentServices);
-    const storeData = useSelector(state => state.store ? state.store.storeData : null);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+    const appointmentItems = useSelector((state: any) => state.appointmentServices);
+    const storeData = useSelector((state: any) => state.store ? state.store.storeData : null);
     const [storeSlot, setStoreSlot] = useState(createSlots(storeData.configData?.startTime, storeData.configData?.closureTime));
     const [filteredList, setfilteredList] = useState<any>();
     const [expertData, setexpertData] = useState(null);
@@ -68,7 +68,7 @@ function Appointment() {
     const [activeInput, setActiveInput] = useState('');
     const [appointmentObj, setAppointmentObj] = useState<any>('');
     const [showTotalBreakdownPopup, setShowTotalBreakdownPopup] = useState(false);
-    const { configData, keywords } = useSelector(state => state.store ? state.store.storeData : null);
+    const { configData, keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
     const { gupshupConfig } = configData?.storeConfig;
     const [familyMember, setFamilyMember] = useState<any>({ name: '', mobileNo: '' });
     const [showAddMemberModal, setShowAddMemberModal] = useState(false)
@@ -76,7 +76,7 @@ function Appointment() {
     const itemSearchRef = useRef<HTMLInputElement>(null);
     const [selectedStoreLocation, setSelectedStoreLocation] = useState('');
     const [categoriesList, setCategoriesList] = useState<any[]>([]);
-    const storeMetaData = useSelector(state => state.store ? state.store.storeMetaData : null);
+    const storeMetaData = useSelector((state: any) => state.store ? state.store.storeMetaData : null);
     const whatsappTemplates = store.whatsappTemplates;
 
     useEffect(() => {

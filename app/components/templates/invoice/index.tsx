@@ -9,7 +9,7 @@ import { navigateTo } from '@util/routerService';
 
 function InvoicePage() {
     const dispatch = useDispatch();
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
     const [orderData, setOrderData] = useState(null)
     const orderId = router.query.pagepath ? router.query.pagepath[1] : '';
 
