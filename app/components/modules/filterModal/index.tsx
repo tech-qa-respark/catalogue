@@ -9,7 +9,7 @@ function FilterModal({ frompage, filterConfig, activeFilters, openModal, handleC
     const [priceRange, setPriceRangeValue] = React.useState<number[]>([1, 100]);
     const [rsValue, setrsValue] = useState(1);
     const [sortingFilters, setSortingFilters] = useState([]);
-    const { storeData } = useSelector(state => state.store ? state.store : null);
+    const { storeData } = useSelector((state: any) => state.store ? state.store : null);
     const { configData } = storeData;
     const [itemCount, setItemCount] = useState(0)
     const [pageheight, setpageheight] = useState<any>('400px');

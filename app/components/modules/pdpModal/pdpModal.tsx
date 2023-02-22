@@ -76,16 +76,16 @@ function PdpModal() {
     const router = useRouter();
     const [quantity, setQuantity] = useState(0);
     const [total, setTotal] = useState(0);
-    const store = useSelector(state => state);
+    const store = useSelector((state: any) => state);
     const dispatch = useDispatch();
     const whatsappTemplates = store.whatsappTemplates;
-    const cartItems = useSelector(state => state.orderItems);
+    const cartItems = useSelector((state: any) => state.orderItems);
     const item = store.pdpItem;
-    const pdpItemStatus = useSelector(state => state.pdpItemStatus);
-    const itemStock = useSelector(state => state.itemStock);
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+    const pdpItemStatus = useSelector((state: any) => state.pdpItemStatus);
+    const itemStock = useSelector((state: any) => state.itemStock);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
     const [activeVariation, setActiveVariation] = useState((item?.variations && item?.variations?.length !== 0) ? item?.variations[0] : null);
-    const { configData, keywords } = useSelector(state => state.store ? state.store.storeData : null);
+    const { configData, keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
     const gupshupConfig = configData?.storeConfig?.gupshupConfig;
     const [availableWidth, setAvailableWidth] = useState(400);
     const [showLongDescription, setShowLongDescription] = useState(false);
@@ -93,7 +93,7 @@ function PdpModal() {
     const shortDescription = item?.description ? item?.description?.substring(0, 90) : '';
     const [showVdoModal, setShowVdoModal] = useState(false)
     const [descList, setDescList] = useState(item?.description ? item?.description?.split('||') : []);
-    const storeMetaData = useSelector(state => state.store ? state.store.storeMetaData : null);
+    const storeMetaData = useSelector((state: any) => state.store ? state.store.storeMetaData : null);
     const [cookie, setCookie] = useCookies();
     const [userData, setUserData] = useState(cookie['user']);
     const [quoteReqSubmitted, setquoteReqSubmitted] = useState(false);

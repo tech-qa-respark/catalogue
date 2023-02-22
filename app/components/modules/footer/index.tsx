@@ -35,13 +35,13 @@ function FcGoogle(props) {
 }
 
 function Footer() {
-    const storeMetaData = useSelector(state => state.store ? state.store.storeMetaData : null);
-    const storeData = useSelector(state => state.store ? state.store.storeData : null);
+    const storeMetaData = useSelector((state: any) => state.store ? state.store.storeMetaData : null);
+    const storeData = useSelector((state: any) => state.store ? state.store.storeData : null);
     const [socialLinks, setSocialLinks] = useState([]);
     const dispatch = useDispatch();
     const [storesList, setStoresList] = useState([])
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-    const { configData } = useSelector(state => state.store ? state.store.storeData : null);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+    const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null);
 
     useEffect(() => {
         const { configData: { socialLinks } } = storeData;

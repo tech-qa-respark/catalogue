@@ -6,7 +6,7 @@ import { useSelector } from 'react-redux';
 
 function circularItem({ item, config, handleClick }) {
     const itemUrl = item.name.toLowerCase().split(" ").join("-");
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
 
     const [activeModalConfig, setactiveModalConfig] = useState<any>({ active: false, itemList: [], config: {}, noImage: CIRCLE_NO_IMAGE });
 

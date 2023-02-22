@@ -5,10 +5,10 @@ import { ORDER_ACCEPTED, ORDER_COMPLETED, ORDER_FIX_DISCOUNT_TYPE, ORDER_PERCENT
 import { navigateTo } from '@util/routerService';
 
 function OrderDetailModel({ handleClose, orderData }) {
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-    const { configData } = useSelector(state => state.store.storeData);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+    const { configData } = useSelector((state: any) => state.store.storeData);
     const orderId = router.query.pagepath ? router.query.pagepath[1] : '';
-    const storeMetaData = useSelector(state => state.store ? state.store.storeMetaData : null);
+    const storeMetaData = useSelector((state: any) => state.store ? state.store.storeMetaData : null);
     const [orderStatus, setOrderStatus] = useState('')
     const [billingObj, setBillingObj] = useState<any>({
         service: { items: [], discount: null, appliedTaxes: [], subtotal: 0, total: 0, taxesTotal: 0 },

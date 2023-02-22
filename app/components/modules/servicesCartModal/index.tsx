@@ -13,7 +13,7 @@ function ServicesCartModal() {
     const modalRef = useRef(null);
     const [modalHeight, setModalHeight] = useState<any>('300px');
     const dispatch = useDispatch();
-    const appointmentItems = useSelector(state => state.appointmentServices);
+    const appointmentItems = useSelector((state: any) => state.appointmentServices);
 
     const onOutsideClick = (event: any) => {
         if (modalRef.current && !modalRef.current.contains(event.target)) {

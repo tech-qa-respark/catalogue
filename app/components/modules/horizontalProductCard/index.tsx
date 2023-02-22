@@ -7,8 +7,8 @@ import { SERVICE, PRODUCT } from '@constant/types';
 
 const HorizontalProductCard = ({ item, handleClick, fromPage = '', config, currentStock = null }) => {
     const dispatch = useDispatch();
-    const cartItems = useSelector(state => state.orderItems);
-    const { configData, keywords } = useSelector(state => state.store ? state.store.storeData : null);
+    const cartItems = useSelector((state: any) => state.orderItems);
+    const { configData, keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
     let openPdp = false;
     if (item.type == SERVICE) {
         openPdp = configData.showServicesPdp;

@@ -31,10 +31,10 @@ function HomePage({ storeData, activeGroup, storeMetaData }) {
   const dispatch = useDispatch();
   let availableGroups = storeData?.configData?.genderConfig || '';
   availableGroups = availableGroups.split(',');
-  const { configData, keywords } = useSelector(state => state.store ? state.store.storeData : null);
-  const currentPage = useSelector(state => state.currentPage);
-  const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-  const cartAppointment = useSelector(state => state.appointmentServices);
+  const { configData, keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
+  const currentPage = useSelector((state: any) => state.currentPage);
+  const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+  const cartAppointment = useSelector((state: any) => state.appointmentServices);
   const [isAnyProductAvailable, setIsAnyProductAvailable] = useState(false)
   const [isAnyServiceAvailable, setIsAnyServiceAvailable] = useState(false)
   const onClickCategory = (cat) => {

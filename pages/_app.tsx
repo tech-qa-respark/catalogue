@@ -20,7 +20,7 @@ Router.events.on('routeChangeStart', () => NProgress.start());
 Router.events.on('routeChangeComplete', () => NProgress.done());
 Router.events.on('routeChangeError', () => NProgress.done());
 
-const WrappedApp: FC<AppProps> = ({ Component, pageProps }) => {
+const WrappedApp: FC<AppProps> = ({ Component, pageProps }: any) => {
   useEffect(() => {
     // console.log(pageProps);
     if (pageProps?.storeData) {

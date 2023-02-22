@@ -10,8 +10,8 @@ import { navigateTo } from '@util/routerService';
 
 function FeedbackPage({ storeData, metaTags }) {
     const dispatch = useDispatch();
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-    const activeGroup = useSelector(state => state.activeGroup);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+    const activeGroup = useSelector((state: any) => state.activeGroup);
     const { configData } = storeData;
     const [appointmentData, setappointmentData] = useState(null)
     const [showFeedbackConfirmation, setShowFeedbackConfirmation] = useState(false);

@@ -28,8 +28,8 @@ function BiFilterAlt(props) {
 function CategoryPage({ url_Segment, storeData, activeGroup, metaTags }) {
 
   const router = useRouter()
-  const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-  const itemsList = useSelector(state => state.store.storeData.itemsList);
+  const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+  const itemsList = useSelector((state: any) => state.store.storeData.itemsList);
   const [activeCuratedGroup, setActiveCuratedGroup] = useState(null)
   const [activeCuratedCategory, setActiveCuratedCategory] = useState(null)
   const [mappedCategories, setMappedCategories] = useState(null);
@@ -43,7 +43,7 @@ function CategoryPage({ url_Segment, storeData, activeGroup, metaTags }) {
   const [curatedItemsList, setCuratedItemsList] = useState(null);
   const [activeMmetaTags, setmetaTags] = useState(metaTags);
   const [accordianExpanded, setAccordianExpanded] = useState(true);
-  const { configData, keywords } = useSelector(state => state.store ? state.store.storeData : null);
+  const { configData, keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
   const [showFilter, setShowFilter] = useState(false);
   const [activeFilters, setActiveFilters] = useState<any>()
   const [filterConfig, setFilterConfig] = useState<any>();

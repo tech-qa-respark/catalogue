@@ -8,11 +8,11 @@ import { navigateTo } from '@util/routerService';
 // http://i.stack.imgur.com/SBv4T.gif
 function ImageSlider({ itemsList, config, no_image }) {
     const router = useRouter()
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
     const [itemList, setItemList] = useState([{ original: no_image, thumbnail: no_image }]);
     const [openImageGallry, setopenImageGallry] = useState(false);
     const [activeModalConfig, setactiveModalConfig] = useState(null);
-    const state = useSelector(state => state);
+    const state = useSelector((state: any) => state);
 
     useEffect(() => {
         const itemsImageArray = [];

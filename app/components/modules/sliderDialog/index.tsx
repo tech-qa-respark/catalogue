@@ -10,7 +10,7 @@ function TransitionRightToLeft(props: TransitionProps) {
 }
 
 function SliderDialog() {
-    const { storeData } = useSelector(state => state.store ? state.store : null);
+    const { storeData } = useSelector((state: any) => state.store ? state.store : null);
     const [displayDialog, setDisplayDialog] = useState(false);
 
     const handleClose = (event: SyntheticEvent | MouseEvent, reason?: string) => {

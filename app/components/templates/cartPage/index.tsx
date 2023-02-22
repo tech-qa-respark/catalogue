@@ -31,11 +31,11 @@ function CgShoppingBag(props) {
 function CartPage() {
     const [pricingBreakdown, setpricingBreakdown] = useState({ total: 0, subTotal: 0, appliedTaxes: [] });
     const dispatch = useDispatch();
-    const cartItems = useSelector(state => state.orderItems);
-    const storeData = useSelector(state => state.store.storeData);
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-    const activeGroup = useSelector(state => state.activeGroup);
-    const itemStock = useSelector(state => state.itemStock);
+    const cartItems = useSelector((state: any) => state.orderItems);
+    const storeData = useSelector((state: any) => state.store.storeData);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+    const activeGroup = useSelector((state: any) => state.activeGroup);
+    const itemStock = useSelector((state: any) => state.itemStock);
     const [cookie, setCookie] = useCookies();
     const [userData, setUserCookie] = useState(cookie['user']);
     const [openLoginModal, setOpenLoginModal] = useState(false);

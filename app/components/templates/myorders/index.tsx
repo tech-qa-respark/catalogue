@@ -13,10 +13,10 @@ function OrderHistoryPage() {
     const dispatch = useDispatch();
     const [cookie, setCookie] = useCookies();
     const [userData, setUserCookie] = useState(cookie['user']);
-    const store = useSelector(state => state.store);
+    const store = useSelector((state: any) => state.store);
     const [orderHistoryData, setOrderHistoryData] = useState(null);
     const [activeOrder, setactiveOrder] = useState(null);
-    const { configData } = useSelector(state => state.store ? state.store.storeData : null);
+    const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null);
 
     useEffect(() => {
         dispatch(enableLoader());

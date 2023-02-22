@@ -4,8 +4,8 @@ import { IMAGES, SERVICE, PRODUCT } from "@constant/types";
 import { useSelector } from 'react-redux';
 
 function ScrollingNavigation({ items, config, handleClick, activeCategory }) {
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-    const { keywords } = useSelector(state => state.store ? state.store.storeData : null);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+    const { keywords } = useSelector((state: any) => state.store ? state.store.storeData : null);
 
     return (
         <div className="cat-navbar-cover">

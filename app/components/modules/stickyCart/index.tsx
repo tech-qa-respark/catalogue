@@ -5,13 +5,13 @@ import { syncLocalStorageOrder } from "app/redux/actions/order";
 import { windowRef } from '@util/window';
 
 function StickyCart() {
-    const baseRouteUrl = useSelector(state => state.store.baseRouteUrl);
-    const currentPage = useSelector(state => state.currentPage);
+    const baseRouteUrl = useSelector((state: any) => state.store.baseRouteUrl);
+    const currentPage = useSelector((state: any) => state.currentPage);
     const [total, setTotal] = useState(0);
     const dispatch = useDispatch();
-    const cartItems = useSelector(state => state.orderItems);
-    const cartAppointment = useSelector(state => state.appointmentServices);
-    const { configData } = useSelector(state => state.store ? state.store.storeData : null);
+    const cartItems = useSelector((state: any) => state.orderItems);
+    const cartAppointment = useSelector((state: any) => state.appointmentServices);
+    const { configData } = useSelector((state: any) => state.store ? state.store.storeData : null);
     const [totalHrs, setTotalHrs] = useState<any>(0);
 
     useEffect(() => {
