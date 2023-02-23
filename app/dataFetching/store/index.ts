@@ -19,7 +19,7 @@ export const getStoreData = (activeGroup, baseApiUrl) => {
                     response.storeMetaData = tenantResponse.data;
 
                     if (response.storeMetaData && response.storeMetaData.active && !response.storeMetaData.terminate) {
-                        await APISERVICE.GET(`${process.env.GET_STORE_BY_STORE_ID}/${response.storeMetaData.id}`) // get store data
+                        await APISERVICE.GET(`${process.env.NEXT_PUBLIC_STORE}/${response.storeMetaData.id}`) // get store data
                             .then((storeResponse) => {
                                 if (storeResponse.status == 200) {
 
@@ -39,14 +39,14 @@ export const getStoreData = (activeGroup, baseApiUrl) => {
                                     console.log('*************Invalid Link*************')
                                     console.log('Session expired, re login into the system. storeResponse.status == 401');
                                     responseError.line = 43;
-                                    responseError.errorMessage.error = `API=>${process.env.GET_STORE_BY_STORE_ID}/${response.storeMetaData.id} storeResponse.status => ${storeResponse.status}`;
+                                    responseError.errorMessage.error = `API=>${process.env.NEXT_PUBLIC_STORE}/${response.storeMetaData.id} storeResponse.status => ${storeResponse.status}`;
                                     rej({ error: 'Session expired, re login into the system.', status: storeResponse.status });
                                 }
                             }).catch(function (e: any) {
                                 console.log('*************Invalid Link*************')
                                 responseError.line = 48;
                                 responseError.errorMessage.error = e;
-                                responseError.errorMessage.message = `API=>${process.env.GET_STORE_BY_STORE_ID}/${response.storeMetaData.id} api failed`;
+                                responseError.errorMessage.message = `API=>${process.env.NEXT_PUBLIC_STORE}/${response.storeMetaData.id} api failed`;
                                 console.log("responseError", e);
                                 rej(e);
                             });
@@ -195,7 +195,7 @@ export const getTenantDataByTenantId = (tenantId) => {
 
 export const getStoresByTenantId = (tenantId) => {
     return new Promise((res, rej) => {
-        APISERVICE.GET(`${process.env.NEXT_PUBLIC_GET_STORES_BY_TENANT_ID}/${tenantId}`).then((response) => {
+        APISERVICE.GET(`${process.env.NEXT_PUBLIC_STORE}/tenant/${tenantId}`).then((response) => {
             if (response) res(response.data);
             else res([])
             // console.log("response", response);
@@ -220,12 +220,12 @@ export const getTenantAndStoresBySubdomain = (subdomain) => {
 
 export const markStoreOptInForWhatsapp = (tenantId) => {
     return new Promise((res, rej) => {
-        APISERVICE.PUT(`${process.env.NEXT_PUBLIC_UPDATE_STORE_OPTIN_FOR_WAPP}/${tenantId}`, {})
+        APISERVICE.PUT(`${process.env.NEXT_PUBLIC_STORE}/optin/${tenantId}`, {})
             .then((response) => {
                 res(response);
             }).catch(function (error) {
                 rej(error);
-                console.log(`Error = ${process.env.NEXT_PUBLIC_UPDATE_STORE_OPTIN_FOR_WAPP}=>`, error);
+                console.log(`Error = ${process.env.NEXT_PUBLIC_STORE}/optin=>`, error);
             });
     })
 }

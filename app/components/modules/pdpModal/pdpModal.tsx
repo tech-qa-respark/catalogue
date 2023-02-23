@@ -492,7 +492,7 @@ function PdpModal() {
                 tenantId: storeMetaData.tenantId,
                 itemUrl: `${storeMetaData.sUrl}/${itemUrl}`
             }
-            APISERVICE.POST(process.env.NEXT_PUBLIC_SEND_QUOTATION, apiBody).then((res) => {
+            APISERVICE.POST(`${process.env.NEXT_PUBLIC_CUSTOMER}/owner`, apiBody).then((res) => {
                 dispatch(showSuccess('Quote request send successfully', 2000));
                 setCookie(`${item.id}`, item.id, {
                     path: "/",

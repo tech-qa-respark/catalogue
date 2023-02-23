@@ -134,7 +134,7 @@ function FeedbackPage({ storeData, metaTags }) {
             })
             if (servicesList.length - 1 === serviceIndex && !isAnyError) {
                 console.log('postFeedbackObj', postFeedbackObj)
-                APISERVICE.POST(process.env.NEXT_PUBLIC_POST_FEEDBACK, postFeedbackObj).then((res) => {
+                APISERVICE.POST(process.env.NEXT_PUBLIC_FEEDBACK, postFeedbackObj).then((res) => {
                     setShowFeedbackConfirmation(true);
                 })
             }

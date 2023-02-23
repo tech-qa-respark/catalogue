@@ -449,7 +449,7 @@ function MainHeader({ storeData, storeMetaData }) {
             sameSite: true,
           })
         }).catch(function (error) {
-          console.log(`Error = ${process.env.NEXT_PUBLIC_UPDATE_ADDRESS}=>`, error);
+          console.log(`Error = ${process.env.NEXT_PUBLIC_CUSTOMER}/updateaddress=>`, error);
         });
       }
     }

@@ -2,7 +2,7 @@ import { APISERVICE } from "@api/RestClient";
 
 export const getFeedbackById = (appId) => {
     return new Promise((res, rej) => {
-        APISERVICE.GET(`${process.env.NEXT_PUBLIC_GET_FEEDBACK_BY_ID}/${appId}`)  //get store details
+        APISERVICE.GET(`${process.env.NEXT_PUBLIC_FEEDBACK}/id/${appId}`)  //get store details
             .then(async (configResponse) => {
                 if (configResponse.status == 200) {
                     const feedbackData = configResponse.data;
@@ -12,10 +12,10 @@ export const getFeedbackById = (appId) => {
                         rej({ err: 'feedback data unavailable' });
                     }
                 } else if (configResponse.status == 401) {
-                    rej({ error: `API FAILED ==> ${process.env.NEXT_PUBLIC_GET_FEEDBACK_BY_ID}/${appId}`, status: configResponse.status });
+                    rej({ error: `API FAILED ==> ${process.env.NEXT_PUBLIC_FEEDBACK}/id/${appId}`, status: configResponse.status });
                 }
             }).catch(function (error) {
-                rej({ error: `API FAILED ==> ${process.env.NEXT_PUBLIC_GET_FEEDBACK_BY_ID}/${appId}`, status: error });
+                rej({ error: `API FAILED ==> ${process.env.NEXT_PUBLIC_FEEDBACK}/id/${appId}`, status: error });
                 console.error("error", error);
             });
     })
@@ -23,7 +23,7 @@ export const getFeedbackById = (appId) => {
 
 export const getFeedbackByAppointmentId = (appId) => {
     return new Promise((res, rej) => {
-        APISERVICE.GET(`${process.env.NEXT_PUBLIC_GET_FEEDBACK_BY_APPOINTMENT_ID}/${appId}`)  //get store details
+        APISERVICE.GET(`${process.env.NEXT_PUBLIC_FEEDBACK}/appointment/${appId}`)  //get store details
             .then(async (configResponse) => {
                 if (configResponse.status == 200) {
                     const feedbackData = configResponse.data;
@@ -33,10 +33,10 @@ export const getFeedbackByAppointmentId = (appId) => {
                         rej({ err: 'feedback data unavailable' });
                     }
                 } else if (configResponse.status == 401) {
-                    rej({ error: `API FAILED ==> ${process.env.NEXT_PUBLIC_GET_FEEDBACK_BY_APPOINTMENT_ID}/${appId}`, status: configResponse.status });
+                    rej({ error: `API FAILED ==> ${process.env.NEXT_PUBLIC_FEEDBACK}/appointment/${appId}`, status: configResponse.status });
                 }
             }).catch(function (error) {
-                rej({ error: `API FAILED ==> ${process.env.NEXT_PUBLIC_GET_FEEDBACK_BY_APPOINTMENT_ID}/${appId}`, status: error });
+                rej({ error: `API FAILED ==> ${process.env.NEXT_PUBLIC_FEEDBACK}/appointment/${appId}`, status: error });
                 console.error("error", error);
             });
     })
